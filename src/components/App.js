@@ -4,7 +4,8 @@ import SideMenu from './SideMenu.js';
 import ModeBar from './ModeBar.js';
 import FloatingButton from './FloatingButton.js';
 import LoginPage from './LoginPage.js';
-import AppMode from "./../AppMode.js"
+import AppMode from "./../AppMode.js";
+import FeedPage from "./FeedPage.js";
 
 const modeTitle = {};
 modeTitle[AppMode.LOGIN] = "Welcome to SpeedScore";
@@ -60,8 +61,10 @@ class App extends React.Component {
         <FloatingButton 
           mode={this.state.mode}
           menuOpen={this.state.menuOpen}/>
-        <LoginPage changeMode={this.handleChangeMode}
-                   setUserId={this.setUserId}/>
+        {this.state.mode = AppMode.LOGIN ?
+            <LoginPage changeMode={this.handleChangeMode}
+                      setUserId={this.setUserId}/> :
+            <FeedPage /> }
       </div>
       );  
 }

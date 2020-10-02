@@ -1,5 +1,5 @@
 import React from 'react';
-
+import AppMode from "./../AppMode.js";
 class LoginPage extends React.Component {
 
     constructor() {
@@ -18,7 +18,7 @@ class LoginPage extends React.Component {
         <div id="login-mode-div" className="padded-page">
         <center>
             <h1 />
-            <form id="loginInterface">
+            <form id="loginInterface" onSubmit = {() => this.props.changeMode(AppMode.FEED)}>
             <label htmlFor="emailInput" style={{ padding: 0, fontSize: 24 }}>
                 Email:
                 <input
