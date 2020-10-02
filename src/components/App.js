@@ -46,14 +46,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBar title={modeTitle[this.state.mode]} 
+        {this.state.menuOpen == false ? <NavBar title={modeTitle[this.state.mode]} 
           mode={this.state.mode}
           changeMode={this.handleChangeMode}
           menuOpen={this.state.menuOpen}
-          toggleMenuOpen={this.toggleMenuOpen}/>
-        <SideMenu 
+          toggleMenuOpen={this.toggleMenuOpen}/> : <SideMenu 
           mode={this.state.mode}
-          toggleMenuOpen={this.toggleMenuOpen}/>
+          toggleMenuOpen={this.toggleMenuOpen}/>  }
         <ModeBar 
           mode={this.state.mode} 
           changeMode={this.handleChangeMode}
@@ -61,7 +60,7 @@ class App extends React.Component {
         <FloatingButton 
           mode={this.state.mode}
           menuOpen={this.state.menuOpen}/>
-        {this.state.mode = AppMode.LOGIN ?
+        {this.state.mode == AppMode.LOGIN ?
             <LoginPage changeMode={this.handleChangeMode}
                       setUserId={this.setUserId}/> :
             <FeedPage /> }

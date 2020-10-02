@@ -1,12 +1,14 @@
 import React from 'react';
+import AppMode from '../AppMode';
 
 class NavBar extends React.Component {
     
     render() {
+   
        return (
         <div className="navbar">  
         <span className="navbar-items">
-          <button className="sidemenu-btn">
+          <button className="sidemenu-btn" onClick = {() => this.props.toggleMenuOpen()}>
             <span id="menuBtnIcon" className="fa fa-bars sidemenu-btn-icon">
             </span>
           </button>
